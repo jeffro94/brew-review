@@ -8,6 +8,7 @@
             'ui.router',
             'mm.foundation',
             'toastr',
+            'angularPromiseButtons',
 
             /* Features */
             'app.components',

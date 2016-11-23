@@ -11,6 +11,9 @@
 @import '../../bower_components/foundation-sites/scss/foundation.scss';
 @include foundation-everything;
 
+/**
+ *  Imports for other 3rd party components
+*/
 $fa-font-path: "../../bower_components/font-awesome/fonts";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 

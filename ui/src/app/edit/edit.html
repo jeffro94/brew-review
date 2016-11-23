@@ -39,11 +39,13 @@
                 </div>
             </div>
             <div class="row">
-                <input type="submit" class="button" value="Submit" />
+                <button type="submit" class="button" promise-btn="vm.loadingPromise">Submit</button>
             </div>
             <div class="row" id="editDelete">
-                <button type="button" class="button" ng-click="vm.delete()">Delete this shop</button>
+                <button type="button" class="button" promise-btn="vm.loadingPromise" ng-click="vm.delete()">Delete this shop</button>
             </div>
         </form>
     </div>
 </div>
+
+<pulse-spinner></pulse-spinner>

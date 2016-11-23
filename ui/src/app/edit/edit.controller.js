@@ -6,7 +6,7 @@
         .controller('EditController', EditController);
 
     /** @ngInject */
-    function EditController($scope, brewService, shop, $log, toastr) {
+    function EditController($scope, brewService, shop, $log, toastr, $timeout) {
         var vm = this;
 
         vm.shop = shop;
@@ -16,18 +16,20 @@
                 return;
             }
 
-            brewService.updateShop(vm.shop).then(
-                function () {
-                    toastr.success('Shop successfully updated!');
-                },
-                function (error) {
-                    $log.error('Error updating shop.\n' + angular.toJson(error.data, true));
-                }
-            );
+            vm.loadingPromise = $timeout(function () {
+                brewService.updateShop(vm.shop).then(
+                    function () {
+                        toastr.success('Shop successfully updated!');
+                    },
+                    function (error) {
+                        $log.error('Error updating shop.\n' + angular.toJson(error.data, true));
+                    }
+                )
+            }, 2000);
         }
 
         vm.delete = function () {
-            brewService.deleteShop(vm.shop.key).then(
+            vm.loadingPromise = brewService.deleteShop(vm.shop.key).then(
                 function () {
                     toastr.success('Shop successfully deleted!');
                 },

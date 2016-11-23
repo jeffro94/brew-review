@@ -16,4 +16,13 @@
     toastrConfig.positionClass = 'toast-top-right';
   }
 
+  //function promiseButtonsConfig(angularPromiseButtonsProvider) {
+  //    angularPromiseButtonsProvider.extendConfig({
+  //        spinnerTpl: '<pulse-spinner></pulse-spinner>',
+  //        disableBtn: true,
+  //        addClassToCurrentBtnOnly: false,
+  //        disableCurrentBtnOnly: false
+  //    });
+  //}
+
 })();
