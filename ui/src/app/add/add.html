@@ -1,0 +1,58 @@
+﻿<div class="row">
+    <div class="large-10 large-offset-1 columns brewTitle">
+        <h1 class="text-center">Add Shop</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="large-10 large-offset-1 columns">
+        <form name="addForm" ng-submit="vm.submitForm(addForm.$valid)" novalidate>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="name" class="right">Name</label>
+                </div>
+                <div class="small-9 columns">
+                    <input type="text" id="name" name="name" ng-model="vm.shop.name" required maxlength="80" />
+                    <div class="messages brewError" ng-messages="addForm.name.$error" ng-show="addForm.name.$invalid && addForm.$submitted">
+                        <small class="message" ng-message="required">Required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="address" class="right">Address</label>
+                </div>
+                <div class="small-9 columns">
+                    <input type="text" id="address" name="address" ng-model="vm.shop.address" required maxlength="255" />
+                    <div class="messages brewError" ng-messages="addForm.address.$error" ng-show="addForm.address.$invalid && addForm.$submitted">
+                        <small class="message" ng-message="required">Required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="price" class="right">Coffee Price</label>
+                </div>
+                <div class="small-9 columns">
+                    <input type="text" id="price" name="price" ng-model="vm.shop.mediumCoffeePrice" required maxlength="255" />
+                    <div class="messages brewError" ng-messages="addForm.price.$error" ng-show="addForm.price.$invalid && addForm.$submitted">
+                        <small class="message" ng-message="required">Required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="rating" class="right">Rating</label>
+                </div>
+                <div class="small-9 columns">
+                    <input type="number" id="rating" name="rating" ng-model="vm.shop.rating" required />
+                    <div class="messages brewError" ng-messages="addForm.rating.$error" ng-show="addForm.rating.$invalid && addForm.$submitted">
+                        <small class="message" ng-message="required">Required</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit" class="button" />
+            </div>
+        </form>
+    </div>
+</div>

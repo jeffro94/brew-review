@@ -1,0 +1,49 @@
+﻿<div class="row">
+    <div class="large-10 large-offset-1 columns brewTitle">
+        <h1 class="text-center">Edit Shop</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="large-10 large-offset-1 columns">
+        <form name="editForm" ng-submit="vm.submitForm(editForm.$valid)" novalidate>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="name" class="right">Name</label>
+                </div>
+                <div class="small-9 columns">
+                    <input type="text" id="name" ng-model="vm.shop.name" maxlength="80" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="address" class="right">Address</label>
+                </div>
+                <div class="small-9 columns">
+                    <input type="text" id="address" ng-model="vm.shop.address" maxlength="255" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="price" class="right">Coffee Price</label>
+                </div>
+                <div class="small-9 columns">
+                    <input type="text" id="price" ng-model="vm.shop.mediumCoffeePrice" maxlength="255" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="rating" class="right">Rating</label>
+                </div>
+                <div class="small-9 columns">
+                    <input type="number" id="rating" ng-model="vm.shop.rating" />
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" class="button" value="Submit" />
+            </div>
+            <div class="row" id="editDelete">
+                <button type="button" class="button" ng-click="vm.delete()">Delete this shop</button>
+            </div>
+        </form>
+    </div>
+</div>
