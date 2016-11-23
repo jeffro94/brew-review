@@ -12,7 +12,12 @@
               url: '/',
               templateUrl: 'app/main/main.html',
               controller: 'MainController',
-              controllerAs: 'vm'
+              controllerAs: 'vm',
+              resolve: {
+                  shops: function (brewService) {
+                      return brewService.getShops();
+                  }
+              }
           });
 
     }

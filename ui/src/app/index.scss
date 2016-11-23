@@ -48,12 +48,17 @@ $fa-font-path: "../../bower_components/font-awesome/fonts";
     font-size: 1.6em;
 }
 
-.brewTitle {
+.brew-title {
     margin-top: 10px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-#mainAddLink {
+.form-actions {
+    margin-top: 20px;
+}
+
+.main-actions {
     margin-top: 35px;
 }
 

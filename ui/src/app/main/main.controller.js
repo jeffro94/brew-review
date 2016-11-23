@@ -6,12 +6,9 @@
     .controller('MainController', MainController);
 
   /** @ngInject */
-  function MainController(brewService) {
+  function MainController(shops) {
       var vm = this;
 
-      brewService.getShops().then(function (result) {
-          vm.shops = result;
-      });
-
+      vm.shops = shops;
   }
 })();
