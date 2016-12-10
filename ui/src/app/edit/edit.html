@@ -2,34 +2,53 @@
 <form name="editForm" ng-submit="vm.submitForm(editForm.$valid)" novalidate>
     <div class="row">
         <div class="medium-3 columns">
-            <label for="name" class="right">Name</label>
+            <label for="name" class="right" ng-class="{ 'is-invalid-label': editForm.name.$invalid && editForm.$submitted }">Name</label>
         </div>
         <div class="medium-9 columns">
-            <input type="text" id="name" ng-model="vm.shop.name" maxlength="80" />
+            <input type="text" id="name" name="name" ng-model="vm.shop.name" required maxlength="80" 
+                   ng-class="{ 'is-invalid-input': editForm.name.$invalid && editForm.$submitted }" />
+            <div class="messages" ng-messages="editForm.name.$error" ng-show="editForm.name.$invalid && editForm.$submitted">
+                <span class="message form-error is-visible" ng-message="required">Required</span>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="medium-3 columns">
-            <label for="address" class="right">Address</label>
+            <label for="address" class="right" ng-class="{ 'is-invalid-label': editForm.address.$invalid && editForm.$submitted }">Address</label>
         </div>
         <div class="medium-9 columns">
-            <input type="text" id="address" ng-model="vm.shop.address" maxlength="255" />
+            <input type="text" id="address" name="address" ng-model="vm.shop.address" required maxlength="255" 
+                   ng-class="{ 'is-invalid-input': editForm.address.$invalid && editForm.$submitted }" />
+            <div class="messages" ng-messages="editForm.address.$error" ng-show="editForm.address.$invalid && editForm.$submitted">
+                <span class="message form-error is-visible" ng-message="required">Required</span>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="medium-3 columns">
-            <label for="price" class="right">Coffee Price</label>
+            <label for="price" class="right" ng-class="{ 'is-invalid-label': editForm.price.$invalid && editForm.$submitted }">Coffee Price</label>
         </div>
         <div class="medium-9 columns">
-            <input type="text" id="price" ng-model="vm.shop.mediumCoffeePrice" maxlength="255" />
+            <input type="number" step="0.01" min="0" id="price" name="price" ng-model="vm.shop.mediumCoffeePrice" required maxlength="255" 
+                   ng-class="{ 'is-invalid-input': editForm.price.$invalid && editForm.$submitted }" />
+            <div class="messages" ng-messages="editForm.price.$error" ng-show="editForm.price.$invalid && editForm.$submitted">
+                <span class="message form-error is-visible" ng-message="required">Required</span>
+                <span class="message form-error is-visible" ng-message="min">Price amount cannot be negative</span>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="medium-3 columns">
-            <label for="rating" class="right">Rating</label>
+            <label for="rating" class="right" ng-class="{ 'is-invalid-label': editForm.rating.$invalid && editForm.$submitted }">Rating</label>
         </div>
         <div class="medium-9 columns">
-            <input type="number" id="rating" ng-model="vm.shop.rating" />
+            <input type="number" min="1" max="5" id="rating" name="rating" ng-model="vm.shop.rating" required 
+                   ng-class="{ 'is-invalid-input': editForm.rating.$invalid && editForm.$submitted }" />
+            <div class="messages" ng-messages="editForm.rating.$error" ng-show="editForm.rating.$invalid && editForm.$submitted">
+                <span class="message form-error is-visible" ng-message="required">Required</span>
+                <span class="message form-error is-visible" ng-message="min">Rating must be between 1 and 5</span>
+                <span class="message form-error is-visible" ng-message="max">Rating must be between 1 and 5</span>
+            </div>
         </div>
     </div>
     <div class="row form-actions">
