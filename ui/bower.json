@@ -4,13 +4,13 @@
   "dependencies": {
     "angular-messages": "~1.5.3",
     "angular-ui-router": "~0.2.15",
-    "foundation-sites": "^6.1.2",
+    "foundation-sites": "~6.1.2",
     "angular-toastr": "~1.5.0",
     "animate.css": "~3.4.0",
     "angular": "~1.5.3",
     "font-awesome": "fontawesome#^4.7.0",
-    "angular-foundation": "^0.8.0",
-    "angular-promise-buttons": "^0.1.18"
+    "angular-foundation": "~0.8.0",
+    "angular-promise-buttons": "~0.1.18"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3"
