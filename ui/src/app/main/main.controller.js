@@ -10,5 +10,6 @@
       var vm = this;
 
       vm.shops = shops;
+      vm.isRatingReadonly = true;
   }
 })();

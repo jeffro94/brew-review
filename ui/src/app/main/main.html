@@ -11,7 +11,7 @@
             {{ shop.mediumCoffeePrice | currency }}
         </div>
         <div class="medium-3 small-4 columns">
-            <rating value="shop.rating" max="5" readonly="true"></rating>
+            <rating value="shop.rating" max="5" readonly="vm.isRatingReadonly"></rating>
         </div>
     </div>
 </div>
