@@ -10,13 +10,16 @@
     "angular": "~1.5.3",
     "font-awesome": "fontawesome#^4.7.0",
     "angular-foundation": "~0.8.0",
-    "angular-promise-buttons": "~0.1.18"
+    "angular-promise-buttons": "~0.1.18",
+    "angular-spinkit": "~0.3.4"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.3"
   },
   "resolutions": {
-    "angular": "~1.5.3"
+    "angular": "~1.5.3",
+    "jquery": "~2.2.0",
+    "what-input": "~2.0.0"
   },
   "overrides": {
     "font-awesome": {

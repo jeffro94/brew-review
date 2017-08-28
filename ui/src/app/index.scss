@@ -1,4 +1,4 @@
-/**
+﻿/**
  *  If you want to override some foundation settings, you have to change values here.
  *  The list of settings values are listed here bower_components/foundation/scss/foundation/_settings.scss
  */
@@ -16,6 +16,7 @@
 */
 $fa-font-path: "../../bower_components/font-awesome/fonts";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/angular-spinkit/src/angular-spinkit.css";
 
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
@@ -60,6 +61,13 @@ $fa-font-path: "../../bower_components/font-awesome/fonts";
 
 .main-actions {
     margin-top: 35px;
+}
+
+.wave-spinner {
+  margin-top: 15px;
+  > div {
+    background-color: #888;
+  }
 }
 
 /**

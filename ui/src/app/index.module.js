@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
     'use strict';
 
     angular
@@ -9,6 +9,7 @@
             'mm.foundation',
             'toastr',
             'angularPromiseButtons',
+            'angular-spinkit',
 
             /* Features */
             'app.components',

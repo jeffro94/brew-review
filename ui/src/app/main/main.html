@@ -1,22 +1,28 @@
-<h1 class="brew-title">All Shops</h1>
+﻿<h1 class="brew-title">All Shops</h1>
 <div class="row">
-    <div class="medium-7 small-8 columns"><strong>Name</strong></div>
-    <div class="medium-2 show-for-medium columns"><strong>Price</strong></div>
-    <div class="medium-3 small-4 columns"><strong>Rating</strong></div>
+  <div class="medium-7 small-8 columns"><strong>Name</strong></div>
+  <div class="medium-2 show-for-medium columns"><strong>Price</strong></div>
+  <div class="medium-3 small-4 columns"><strong>Rating</strong></div>
 </div>
-<div>
+<div ng-show="vm.isPageLoading">
+  <wave-spinner></wave-spinner>
+</div>
+<div ng-show="!vm.isPageLoading">
+  <div>
     <div class="row" ng-repeat="shop in vm.shops">
-        <div class="medium-7 small-8 columns"><a ui-sref="edit({ shopId: shop.key })">{{ shop.name }}</a></div>
-        <div class="medium-2 show-for-medium columns">
-            {{ shop.mediumCoffeePrice | currency }}
-        </div>
-        <div class="medium-3 small-4 columns">
-            <rating value="shop.rating" max="5" readonly="vm.isRatingReadonly"></rating>
-        </div>
+      <div class="medium-7 small-8 columns"><a ui-sref="edit({ shopId: shop.key })">{{ shop.name }}</a></div>
+      <div class="medium-2 show-for-medium columns">
+        {{ shop.mediumCoffeePrice | currency }}
+      </div>
+      <div class="medium-3 small-4 columns">
+        <rating value="shop.rating" max="5" readonly="vm.isRatingReadonly"></rating>
+      </div>
     </div>
-</div>
-<div class="row main-actions text-center">
+  </div>
+  <div class="row main-actions text-center">
     <div class="small-12 columns">
-        <a ui-sref="add">Add a Shop</a>
+      <a ui-sref="add">Add a Shop</a>
     </div>
+  </div>
 </div>
+
