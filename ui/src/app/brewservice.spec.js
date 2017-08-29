@@ -4,7 +4,7 @@
     describe('Brew Service', function () {
         var brewService, $q, $httpBackend;
 
-        var API = 'http://brewapi.azurewebsites.net/api/coffeeshop/';
+        var API = 'https://brewapi.azurewebsites.net/api/coffeeshop/';
 
         // hard coded list to test with
         var shopsList = [

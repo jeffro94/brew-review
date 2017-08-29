@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
     'use strict';
 
     angular
@@ -19,7 +19,7 @@
 
         // Get all the shops
         function getShops() {
-            return $http.get('http://brewapi.azurewebsites.net/api/coffeeshop/')
+            return $http.get('https://brewapi.azurewebsites.net/api/coffeeshop/')
               .then(success)
               .catch(fail);
 
@@ -34,7 +34,7 @@
 
         // Get a specific shop by Id
         function getShop(shopId) {
-            return $http.get('http://brewapi.azurewebsites.net/api/coffeeshop/' + shopId)
+            return $http.get('https://brewapi.azurewebsites.net/api/coffeeshop/' + shopId)
               .then(success)
               .catch(fail);
 
@@ -51,7 +51,7 @@
         function updateShop(shop) {
             var config = {
                 method: 'PATCH',
-                url: 'http://brewapi.azurewebsites.net/api/coffeeshop/' + shop.key,
+                url: 'https://brewapi.azurewebsites.net/api/coffeeshop/' + shop.key,
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -75,7 +75,7 @@
         function addShop(shop) {
             var config = {
                 method: 'POST',
-                url: 'http://brewapi.azurewebsites.net/api/coffeeshop/',
+                url: 'https://brewapi.azurewebsites.net/api/coffeeshop/',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -99,7 +99,7 @@
         function deleteShop(shopId) {
             var config = {
                 method: 'DELETE',
-                url: 'http://brewapi.azurewebsites.net/api/coffeeshop/' + shopId
+                url: 'https://brewapi.azurewebsites.net/api/coffeeshop/' + shopId
             };
 
             return $http(config)
