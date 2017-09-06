@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using CoffeeShopCore.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 namespace CoffeeShopCore
 {
@@ -32,7 +34,9 @@ namespace CoffeeShopCore
             services.AddCors();
             services.AddMvc();
 
-            services.AddSingleton<ICoffeeShopRepository, CoffeeShopRepository>();
+            // Entity Framework
+            var connection = Configuration.GetConnectionString("BrewDatabase");
+            services.AddDbContext<BrewContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
